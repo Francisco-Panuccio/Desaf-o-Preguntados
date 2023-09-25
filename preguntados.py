@@ -155,7 +155,6 @@ while running:
                 if ((position_click[0] > 50 and position_click[0] < 250) and (position_click[1] > 45 and position_click[1] < 145)):
                     if lap_counter >= len(lista):
                         end_game()
-                        reset_advance_score("Resetear")
                     else:
                         start.play()
                         reset_advance_score("Avanzar")
@@ -169,7 +168,6 @@ while running:
                     if (result == "Respuesta Correcta" or result == "No más opciones"):
                         if lap_counter >= len(lista):
                             end_game()
-                            reset_advance_score("Resetear")
                         else:
                             if (result == "Respuesta Correcta"):
                                 correct_answer.play()
@@ -188,7 +186,6 @@ while running:
                     if (result == "Respuesta Correcta" or result == "No más opciones"):
                         if lap_counter >= len(lista):
                             end_game()
-                            reset_advance_score("Resetear")
                         else:
                             if (result == "Respuesta Correcta"):
                                 correct_answer.play()
@@ -207,7 +204,6 @@ while running:
                     if (result == "Respuesta Correcta" or result == "No más opciones"):
                         if lap_counter >= len(lista):
                             end_game()
-                            reset_advance_score("Resetear")
                         else:
                             if (result == "Respuesta Correcta"):
                                 correct_answer.play()
