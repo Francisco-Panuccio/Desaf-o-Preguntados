@@ -145,80 +145,81 @@ while running:
     for event in pygame.event.get():
         if (event.type == pygame.MOUSEBUTTONDOWN):
             position_click = list(event.pos)
-            #Tanda de Preguntas
-            if ((position_click[0] > 50 and position_click[0] < 250) and (position_click[1] > 45 and position_click[1] < 145)):
-                if lap_counter >= len(lista):
-                    end_game()
-                    reset_advance_score("Resetear")
-                else:
-                    start.play()
-                    reset_advance_score("Avanzar")
-            #Reinicio
-            if ((position_click[0] > 1183 and position_click[0] < 1385) and (position_click[1] > 50 and position_click[1] < 150)):
-                reset.play()
-                reset_advance_score("Resetear")
-            #Respuesta A
-            if ((position_click[0] > 375 and position_click[0] < 575) and (position_click[1] > 600 and position_click[1] < 660)):
-                result = answer_verification(start_flag, score, lap_counter, answer_counter, answers, "a")
-                if (result == "Respuesta Correcta" or result == "No más opciones"):
-                    if lap_counter >= len(lista):
-                        end_game()
-                        reset_advance_score("Resetear")
-                    else:
-                        if (result == "Respuesta Correcta"):
-                            correct_answer.play()
-                            reset_advance_score("Score")
-                            answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/check.png")
-                        else:
-                            turn_lost.play()
-                            reset_advance_score("Score")
-                else:
-                    fail.play()
-                    fail_flag = "Fail_A"
-                    answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/error.png")
-            #Respuesta B
-            if ((position_click[0] > 625 and position_click[0] < 825) and (position_click[1] > 600 and position_click[1] < 660)):
-                result = answer_verification(start_flag, score, lap_counter, answer_counter, answers, "b")
-                if (result == "Respuesta Correcta" or result == "No más opciones"):
-                    if lap_counter >= len(lista):
-                        end_game()
-                        reset_advance_score("Resetear")
-                    else:
-                        if (result == "Respuesta Correcta"):
-                            correct_answer.play()
-                            reset_advance_score("Score")
-                            answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/check.png")
-                        else:
-                            turn_lost.play()
-                            reset_advance_score("Score")
-                else:
-                    fail.play()
-                    fail_flag = "Fail_B"
-                    answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/error.png")
-            #Respuesta C
-            if ((position_click[0] > 875 and position_click[0] < 1075) and (position_click[1] > 600 and position_click[1] < 660)):
-                result = answer_verification(start_flag, score, lap_counter, answer_counter, answers, "c")
-                if (result == "Respuesta Correcta" or result == "No más opciones"):
-                    if lap_counter >= len(lista):
-                        end_game()
-                        reset_advance_score("Resetear")
-                    else:
-                        if (result == "Respuesta Correcta"):
-                            correct_answer.play()
-                            reset_advance_score("Score")
-                            answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/check.png")
-                        else:
-                            turn_lost.play()
-                            reset_advance_score("Score")
-                else:
-                    fail.play()
-                    fail_flag = "Fail_C"
-                    answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/error.png")
             #Juego Terminado
             if (end_flag == True):
                 if ((position_click[0] > 620 and position_click[0] < 820) and (position_click[1] > 275 and position_click[1] < 475)):
                     end_flag = False
                     reset_advance_score("Resetear")
+            else:
+                #Tanda de Preguntas
+                if ((position_click[0] > 50 and position_click[0] < 250) and (position_click[1] > 45 and position_click[1] < 145)):
+                    if lap_counter >= len(lista):
+                        end_game()
+                        reset_advance_score("Resetear")
+                    else:
+                        start.play()
+                        reset_advance_score("Avanzar")
+                #Reinicio
+                if ((position_click[0] > 1183 and position_click[0] < 1385) and (position_click[1] > 50 and position_click[1] < 150)):
+                    reset.play()
+                    reset_advance_score("Resetear")
+                #Respuesta A
+                if ((position_click[0] > 375 and position_click[0] < 575) and (position_click[1] > 600 and position_click[1] < 660)):
+                    result = answer_verification(start_flag, score, lap_counter, answer_counter, answers, "a")
+                    if (result == "Respuesta Correcta" or result == "No más opciones"):
+                        if lap_counter >= len(lista):
+                            end_game()
+                            reset_advance_score("Resetear")
+                        else:
+                            if (result == "Respuesta Correcta"):
+                                correct_answer.play()
+                                reset_advance_score("Score")
+                                answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/check.png")
+                            else:
+                                turn_lost.play()
+                                reset_advance_score("Score")
+                    else:
+                        fail.play()
+                        fail_flag = "Fail_A"
+                        answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/error.png")
+                #Respuesta B
+                if ((position_click[0] > 625 and position_click[0] < 825) and (position_click[1] > 600 and position_click[1] < 660)):
+                    result = answer_verification(start_flag, score, lap_counter, answer_counter, answers, "b")
+                    if (result == "Respuesta Correcta" or result == "No más opciones"):
+                        if lap_counter >= len(lista):
+                            end_game()
+                            reset_advance_score("Resetear")
+                        else:
+                            if (result == "Respuesta Correcta"):
+                                correct_answer.play()
+                                reset_advance_score("Score")
+                                answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/check.png")
+                            else:
+                                turn_lost.play()
+                                reset_advance_score("Score")
+                    else:
+                        fail.play()
+                        fail_flag = "Fail_B"
+                        answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/error.png")
+                #Respuesta C
+                if ((position_click[0] > 875 and position_click[0] < 1075) and (position_click[1] > 600 and position_click[1] < 660)):
+                    result = answer_verification(start_flag, score, lap_counter, answer_counter, answers, "c")
+                    if (result == "Respuesta Correcta" or result == "No más opciones"):
+                        if lap_counter >= len(lista):
+                            end_game()
+                            reset_advance_score("Resetear")
+                        else:
+                            if (result == "Respuesta Correcta"):
+                                correct_answer.play()
+                                reset_advance_score("Score")
+                                answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/check.png")
+                            else:
+                                turn_lost.play()
+                                reset_advance_score("Score")
+                    else:
+                        fail.play()
+                        fail_flag = "Fail_C"
+                        answer_logo = pygame.image.load(os.getcwd() + "/Clase 3/Desafío Preguntados/images/error.png")
         #Quitar el Juego
         if (event.type == pygame.QUIT):
             running = False
